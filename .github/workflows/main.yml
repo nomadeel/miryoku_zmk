@@ -156,6 +156,7 @@ jobs:
           fi
 
           run_name=`echo $run_name | tr ' ' '-'`
+          run_name=`echo $run_name | sed 's/[\/\\":<>|*?]/_/g'`
           echo "run_name=$run_name" >> $GITHUB_OUTPUT
 
           echo "::endgroup::"
